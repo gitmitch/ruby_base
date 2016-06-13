@@ -43,3 +43,11 @@ Vagrantfile:
 
     $ mkdir ../fancy_rails_app
     $ ln -s ../vagrant_src ../fancy_rails_app
+
+## Rails Server
+
+When running Rails server, you must allow it to respond to requests from any IP. By default, it will only respond to requests from localhost. Run Rails server like this:
+
+    $ rails server -b 0.0.0.0
+
+Vagrant is forwarding port 3000, so you should be able to see your website from the host at http://localhost:3000 .

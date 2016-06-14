@@ -22,6 +22,8 @@ VM in the `/vagrant` directory:
 
     $ ./init_rbenv.sh
 
+Exit the SSH session and restart it.
+
 Then, to install Rails, run:
 
     $ ./install_rails.sh

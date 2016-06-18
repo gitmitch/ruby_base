@@ -22,7 +22,12 @@ Vagrant.configure(2) do |config|
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
+
+  # local rails server
   config.vm.network "forwarded_port", guest: 3000, host: 3000
+
+  # apache, running phppgadmin
+  config.vm.network "forwarded_port", guest: 80, host: 8080
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
@@ -67,7 +72,7 @@ Vagrant.configure(2) do |config|
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
     sudo apt-get update
-    sudo apt-get -y install postgresql postgresql-contrib postgresql-client python-dev fish git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev
+    sudo apt-get -y install postgresql postgresql-contrib postgresql-client phppgadmin python-dev fish git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev
 
   #   sudo apt-get install -y apache2
   SHELL

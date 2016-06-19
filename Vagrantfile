@@ -26,6 +26,9 @@ Vagrant.configure(2) do |config|
   # local rails server
   config.vm.network "forwarded_port", guest: 3000, host: 3000
 
+  # secondary local rails server
+  config.vm.network "forwarded_port", guest: 3001, host: 3001
+
   # apache, running phppgadmin
   config.vm.network "forwarded_port", guest: 80, host: 8080
 
